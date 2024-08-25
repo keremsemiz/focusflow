@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
-function TimeTracker({ tasks }) {
+function TimeTracker({ tasks, updateTaskTime }) {
   const [selectedTaskId, setSelectedTaskId] = useState('');
   const [time, setTime] = useState(0);
   const [isActive, setIsActive] = useState(false);
@@ -27,6 +27,10 @@ function TimeTracker({ tasks }) {
 
   const handlePause = () => {
     setIsActive(false);
+    if (selectedTaskId) {
+      updateTaskTime(selectedTaskId, time);
+      setTime(0); // reset the loc time ater updateing task
+    }
   };
 
   const handleReset = () => {

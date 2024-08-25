@@ -12,6 +12,7 @@ function TaskManager() {
       name: taskName,
       priority: taskPriority,
       deadline: taskDeadline,
+      timeSpent: 0,
       completed: false,
     };
     setTasks([...tasks, newTask]);
@@ -28,6 +29,14 @@ function TaskManager() {
     setTasks(
       tasks.map(task =>
         task.id === id ? { ...task, completed: !task.completed } : task
+      )
+    );
+  };
+
+  const updateTaskTime = (id, additionalTime) => {
+    setTasks(
+      tasks.map(task =>
+        task.id === id ? { ...task, timeSpent: task.timeSpent + additionalTime } : task
       )
     );
   };
@@ -66,7 +75,8 @@ function TaskManager() {
           {tasks.map(task => (
             <li key={task.id} className={task.completed ? 'completed-task' : ''}>
               {task.name} - <span className="caption">{task.priority} Priority</span> - 
-              <span className="caption">Due: {task.deadline}</span>
+              <span className="caption">Due: {task.deadline}</span> - 
+              <span className="caption">Time Spent: {Math.floor(task.timeSpent / 3600)}h {Math.floor((task.timeSpent % 3600) / 60)}m</span>
               <button onClick={() => handleToggleComplete(task.id)} className="pill">
                 {task.completed ? 'Mark Incomplete' : 'Mark Complete'}
               </button>

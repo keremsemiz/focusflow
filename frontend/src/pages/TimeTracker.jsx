@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import './TimeTrack.css';
 
 function TimeTracker() {
   const [timeSpent, setTimeSpent] = useState(0);

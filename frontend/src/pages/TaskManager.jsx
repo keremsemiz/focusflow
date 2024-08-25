@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import '../App.css';
 
 function TaskManager() {
   const [projects, setProjects] = useState(JSON.parse(localStorage.getItem('projects')) || ['Default Project']);

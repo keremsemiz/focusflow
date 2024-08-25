@@ -316,6 +316,23 @@ body {
   font-family: "SF Mono", "Roboto Mono", Menlo, Consolas, monospace;
 }
 
+.low-priority {
+  color: green;
+}
+
+.medium-priority {
+  color: orange;
+}
+
+.high-priority {
+  color: red;
+}
+
+.overdue-task {
+  color: red;
+  font-weight: bold;
+}
+
 input::-webkit-input-placeholder,
 input::-moz-placeholder,
 input:-ms-input-placeholder,

@@ -42,12 +42,12 @@ function App() {
     <Router>
       <div className="app-container">
         <nav className="navbar">
-          <ul>
+          <div className="navholder">
             <li><Link to="/" className="pill">Dashboard</Link></li>
             <li><Link to="/tasks" className="pill">Task Manager</Link></li>
             <li><Link to="/time-tracker" className="pill">Time Tracker</Link></li>
             <li><Link to="/settings" className="pill">Settings</Link></li>
-          </ul>
+          </div>
         </nav>
         <main className="main-content">
         <Routes>

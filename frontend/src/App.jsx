@@ -1,5 +1,5 @@
-import React from 'react';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
+import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
 import Dashboard from './pages/Dashboard';
 import TaskManager from './pages/TaskManager';
 import TimeTracker from './pages/TimeTracker';
@@ -43,10 +43,10 @@ function App() {
       <div className="app-container">
         <nav className="navbar">
           <ul>
-            <li><a href="/" className="pill">Dashboard</a></li>
-            <li><a href="/tasks" className="pill">Task Manager</a></li>
-            <li><a href="/time-tracker" className="pill">Time Tracker</a></li>
-            <li><a href="/settings" className="pill">Settings</a></li>
+            <li><Link to="/" className="pill">Dashboard</Link></li>
+            <li><Link to="/tasks" className="pill">Task Manager</Link></li>
+            <li><Link to="/time-tracker" className="pill">Time Tracker</Link></li>
+            <li><Link to="/settings" className="pill">Settings</Link></li>
           </ul>
         </nav>
         <main className="main-content">

@@ -1,82 +1,56 @@
 import React, { useState } from 'react';
 
-function Settings({ defaultSettings, updateSettings }) {
-  const [workDuration, setWorkDuration] = useState(defaultSettings.workDuration);
-  const [shortBreak, setShortBreak] = useState(defaultSettings.shortBreak);
-  const [longBreak, setLongBreak] = useState(defaultSettings.longBreak);
-  const [notifications, setNotifications] = useState(defaultSettings.notifications);
-  const [theme, setTheme] = useState(defaultSettings.theme);
+function Settings({ currentSettings, onSave }) {
+  const [workDuration, setWorkDuration] = useState(currentSettings.workDuration);
+  const [shortBreak, setShortBreak] = useState(currentSettings.shortBreak);
+  const [longBreak, setLongBreak] = useState(currentSettings.longBreak);
+  const [theme, setTheme] = useState(currentSettings.theme);
 
-  const handleSaveSettings = () => {
+  const saveSettings = () => {
     const newSettings = {
       workDuration,
       shortBreak,
       longBreak,
-      notifications,
       theme,
     };
-    updateSettings(newSettings);
-    alert('Settings saved successfully!');
+    onSave(newSettings);
   };
 
   return (
-    <div className="container">
-      <h1 className="title">Settings</h1>
-
-      <div className="card">
-        <h2 className="headline">Timer Settings</h2>
-        <label>
-          Work Duration (minutes):
-          <input
-            type="number"
-            value={workDuration}
-            onChange={(e) => setWorkDuration(e.target.value)}
-            min="1"
-          />
-        </label>
-        <label>
-          Short Break (minutes):
-          <input
-            type="number"
-            value={shortBreak}
-            onChange={(e) => setShortBreak(e.target.value)}
-            min="1"
-          />
-        </label>
-        <label>
-          Long Break (minutes):
-          <input
-            type="number"
-            value={longBreak}
-            onChange={(e) => setLongBreak(e.target.value)}
-            min="1"
-          />
-        </label>
-      </div>
-
-      <div className="card">
-        <h2 className="headline">Notifications</h2>
-        <label>
-          <input
-            type="checkbox"
-            checked={notifications}
-            onChange={(e) => setNotifications(e.target.checked)}
-          />
-          Enable Notifications
-        </label>
-      </div>
-
-      <div className="card">
-        <h2 className="headline">Theme</h2>
-        <label>
-          <select value={theme} onChange={(e) => setTheme(e.target.value)}>
-            <option value="light">Light</option>
-            <option value="dark">Dark</option>
-          </select>
-        </label>
-      </div>
-
-      <button onClick={handleSaveSettings} className="pill">Save Settings</button>
+    <div className="settings">
+      <h1>Settings</h1>
+      <label>
+        Work Duration (minutes):
+        <input
+          type="number"
+          value={workDuration}
+          onChange={(e) => setWorkDuration(e.target.value)}
+        />
+      </label>
+      <label>
+        Short Break (minutes):
+        <input
+          type="number"
+          value={shortBreak}
+          onChange={(e) => setShortBreak(e.target.value)}
+        />
+      </label>
+      <label>
+        Long Break (minutes):
+        <input
+          type="number"
+          value={longBreak}
+          onChange={(e) => setLongBreak(e.target.value)}
+        />
+      </label>
+      <label>
+        Theme:
+        <select value={theme} onChange={(e) => setTheme(e.target.value)}>
+          <option value="light">Light</option>
+          <option value="dark">Dark</option>
+        </select>
+      </label>
+      <button onClick={saveSettings}>Save Settings</button>
     </div>
   );
 }

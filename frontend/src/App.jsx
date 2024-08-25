@@ -50,12 +50,12 @@ function App() {
           </ul>
         </nav>
         <main className="main-content">
-          <Routes>
-            <Route path="/" element={<Dashboard />} />
-            <Route path="/tasks" element={<TaskManager />} />
-            <Route path="/time-tracker" element={<TimeTracker />} />
-            <Route path="/settings" element={<Settings />} />
-          </Routes>
+        <Routes>
+          <Route path="/" element={<Dashboard />} />
+          <Route path="/tasks" element={<TaskManager />} />
+          <Route path="/time-tracker" element={<TimeTracker />} />
+          <Route path="/settings" element={<Settings currentSettings={settings} onSave={updateSettings} />} />
+        </Routes>
         </main>
       </div>
     </Router>

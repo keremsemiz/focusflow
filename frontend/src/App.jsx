@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Dashboard from './pages/Dashboard';
 import TaskManager from './pages/TaskManager';
@@ -7,29 +7,16 @@ import Settings from './pages/Settings';
 import './App.css';
 
 function App() {
-  const [theme, setTheme] = useState('light-theme');
-
-  useEffect(() => {
-    document.body.className = theme;
-  }, [theme]);
-
-  const toggleTheme = () => {
-    setTheme(prevTheme => prevTheme === 'light-theme' ? 'dark-theme' : 'light-theme');
-  };
-
   return (
     <Router>
-      <div className="app-container">
+      <div className="container">
         <nav className="navbar">
           <ul>
-            <li><a href="/">Dashboard</a></li>
-            <li><a href="/tasks">Task Manager</a></li>
-            <li><a href="/time-tracker">Time Tracker</a></li>
-            <li><a href="/settings">Settings</a></li>
+            <li><a href="/" className="pill">Dashboard</a></li>
+            <li><a href="/tasks" className="pill">Task Manager</a></li>
+            <li><a href="/time-tracker" className="pill">Time Tracker</a></li>
+            <li><a href="/settings" className="pill">Settings</a></li>
           </ul>
-          <button onClick={toggleTheme}>
-            {theme === 'light-theme' ? 'Switch to Dark Theme' : 'Switch to Light Theme'}
-          </button>
         </nav>
         <main className="main-content">
           <Switch>

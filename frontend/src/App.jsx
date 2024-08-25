@@ -43,10 +43,10 @@ function App() {
       <div className="app-container">
         <nav className="navbar">
           <div className="navholder">
-            <li><Link to="/" className="pill">Dashboard</Link></li>
-            <li><Link to="/tasks" className="pill">Task Manager</Link></li>
-            <li><Link to="/time-tracker" className="pill">Time Tracker</Link></li>
-            <li><Link to="/settings" className="pill">Settings</Link></li>
+            <li><a href="/" class="pill active"><span class="icon">🏠</span>Dashboard</a></li>
+            <li><a href="/tasks" class="pill"><span class="icon">📋</span>Task Manager</a></li>
+            <li><a href="/time-tracker" class="pill"><span class="icon">⏱️</span>Time Tracker</a></li>
+            <li><a href="/settings" class="pill"><span class="icon">⚙️</span>Settings</a></li>
           </div>
         </nav>
         <main className="main-content">

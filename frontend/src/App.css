@@ -1,42 +1,103 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+:root {
+  --bg-color: hsl(0, 0%, 90%);
+  --keypad-bg: hsl(0, 5%, 81%);
+  --display-bg: hsl(0, 0%, 93%);
+  --display-text: hsl(60, 10%, 19%);
+  --function-key-bg: hsl(185, 42%, 37%);
+  --function-key-hover: hsla(184, 40%, 56%, 1);
+  --function-key-shadow: hsl(185, 58%, 25%);
+  --function-key-text: hsl(0, 100%, 100%);
+  --equals-key-bg: hsl(25, 98%, 40%);
+  --equals-key-hover: hsla(25, 100%, 61%, 1);
+  --equals-key-shadow: hsl(25, 99%, 27%);
+  --equals-key-text: hsl(0, 100%, 100%);
+  --number-key-bg: hsl(45, 7%, 89%);
+  --number-key-hover: hsla(0, 0%, 100%, 1);
+  --number-key-shadow: hsl(35, 11%, 61%);
+  --number-key-text: hsl(60, 10%, 19%);
+  --focus-color: hsl(0, 5%, 81%);
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+body {
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+  background-color: var(--bg-color);
+  color: var(--display-text);
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.app-container {
+  display: flex;
+  height: 100vh;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+.navbar {
+  width: 200px;
+  background-color: var(--function-key-bg);
+  padding: 20px;
 }
 
-.card {
-  padding: 2em;
+.navbar ul {
+  list-style: none;
+  padding: 0;
 }
 
-.read-the-docs {
-  color: #888;
+.navbar ul li {
+  margin-bottom: 20px;
+}
+
+.navbar ul li a {
+  color: var(--function-key-text);
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.navbar ul li a:hover {
+  color: var(--equals-key-text);
+}
+
+.main-content {
+  flex-grow: 1;
+  padding: 20px;
+  background-color: var(--keypad-bg);
+  color: var(--display-text);
+}
+
+.dark-theme {
+  --bg-color: hsl(222, 26%, 31%);
+  --keypad-bg: hsl(223, 31%, 20%);
+  --display-bg: hsl(224, 36%, 15%);
+  --display-text: hsl(0, 100%, 100%);
+  --function-key-bg: hsl(225, 21%, 49%);
+  --function-key-shadow: hsl(224, 28%, 35%);
+  --function-key-text: hsl(0, 100%, 100%);
+  --function-key-hover: hsl(224, 51%, 76%);
+  --equals-key-bg: hsl(6, 63%, 50%);
+  --equals-key-hover: hsla(6, 93%, 67%, 1);
+  --equals-key-shadow: hsl(6, 70%, 34%);
+  --equals-key-text: hsl(0, 100%, 100%);
+  --number-key-bg: hsl(30, 25%, 89%);
+  --number-key-hover: hsl(31, 100%, 100%);
+  --number-key-shadow: hsl(28, 16%, 65%);
+  --number-key-text: hsl(221, 14%, 31%);
+  --focus-color: hsl(223, 31%, 20%);
+}
+
+.light-theme {
+  --bg-color: hsl(0, 0%, 90%);
+  --keypad-bg: hsl(0, 5%, 81%);
+  --display-bg: hsl(0, 0%, 93%);
+  --display-text: hsl(60, 10%, 19%);
+  --function-key-bg: hsl(185, 42%, 37%);
+  --function-key-hover: hsla(184, 40%, 56%, 1);
+  --function-key-shadow: hsl(185, 58%, 25%);
+  --function-key-text: hsl(0, 100%, 100%);
+  --equals-key-bg: hsl(25, 98%, 40%);
+  --equals-key-hover: hsla(25, 100%, 61%, 1);
+  --equals-key-shadow: hsl(25, 99%, 27%);
+  --equals-key-text: hsl(0, 100%, 100%);
+  --number-key-bg: hsl(45, 7%, 89%);
+  --number-key-hover: hsla(0, 0%, 100%, 1);
+  --number-key-shadow: hsl(35, 11%, 61%);
+  --number-key-text: hsl(60, 10%, 19%);
+  --focus-color: hsl(0, 5%, 81%);
 }
